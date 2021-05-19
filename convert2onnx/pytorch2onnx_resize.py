@@ -7,7 +7,7 @@ class JustReshape(torch.nn.Module):
         self.mean = torch.randn(2, 3, 4, 5)
         self.std = torch.randn(2, 3, 4, 5)
 
-        self.conv1 = nn.Conv2d(in_channels=3, out_channels=10, kernel_size=1, stride=1, padding=1, bias=True)
+        self.conv1 = nn.Conv2d(in_channels=3, out_channels=10, kernel_size=2, stride=3, padding=1, bias=True)
 
     def forward(self, x):
         x = (x - self.mean) / self.std
@@ -16,7 +16,7 @@ class JustReshape(torch.nn.Module):
 
 
 net = JustReshape()
-model_name = '../model/just_reshape.onnx'
+model_name = '../model/just_reshape_0518.onnx'
 dummy_input = torch.randn(1, 3, 4, 5)
 
 ouuu = net.forward(dummy_input)

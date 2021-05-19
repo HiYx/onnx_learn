@@ -1,0 +1,1 @@
+python -m onnxsim E:\pytorch-cifar100\onnx\output_file.onnx E:\pytorch-cifar100\onnx\sim.onnx  --input-shape "1,3,244,244"  --dynamic-input-shape True
